@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>titular</title>
+  <title>Halabrand</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -44,7 +44,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish toe an image logo -->
         <!-- <img src="logo.png" alt=""> -->
-        <h1 class="sitename">Iman</h1>
+        <h1 class="sitename">Halabrand</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -53,7 +53,7 @@
           <li><a href="DEALS.html">DEALS</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="team.html" class="active">Team</a></li>
+          <li><a href="team.html" class="active">Warehouses</a></li>
           <li><a href="blog.html">Blog</a></li>
           
          
@@ -74,7 +74,7 @@
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Team</li>
+            <li class="current">Warehouses</li>
           </ol>
         </nav>
       </div>
@@ -206,6 +206,52 @@
       </div>
     </section><!-- /Team Section -->
 
+    <!-- Modal -->
+<div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="teamModalLabel">Team Member</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="team-modal-content">
+          <img src="" alt="" id="team-modal-image" class="img-fluid">
+          <h3 id="team-modal-name"></h3>
+          <span class="d-block position" id="team-modal-position"></span>
+          <p id="team-modal-description"></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Event listener for opening the modal
+  document.querySelectorAll('.team .more').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      // Get the clicked team member
+      const teamMember = item.closest('.team');
+      
+      // Update modal content
+      document.getElementById('team-modal-image').src = teamMember.querySelector('img').src;
+      document.getElementById('team-modal-name').textContent = teamMember.querySelector('h3').textContent;
+      document.getElementById('team-modal-position').textContent = teamMember.querySelector('.position').textContent;
+      document.getElementById('team-modal-description').textContent = teamMember.querySelector('p').textContent;
+      
+      // Show the modal
+      new bootstrap.Modal(document.getElementById('teamModal')).show();
+    });
+  });
+</script>
+
+
+
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -298,7 +344,7 @@
       </div>
 
       <div class="copyright d-flex flex-column flex-md-row align-items-center justify-content-md-between">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Iman</strong> <span>All Rights Reserved</span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Halabrand</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you've purchased the pro version. -->
