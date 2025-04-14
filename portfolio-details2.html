@@ -104,25 +104,72 @@
               }
             }
           </script>
-          <div class="swiper-wrapper align-items-center">
 
-            <div class="swiper-slide">
-              <img src="portfolio/app-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="portfolio/product-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="portfolio/branding-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="portfolio/books-1.jpg" alt="">
-            </div>
-
+          <style>
+            /* Styling for images */
+            .swiper-slide img {
+              width: 100%;
+              height: auto;
+              display: block;
+            }
+        
+            /* Make alt text appear when image is missing */
+            .swiper-slide img:empty {
+              display: none; /* Hide image if not available */
+            }
+        
+            .swiper-slide img[alt]:not([src]) {
+              position: relative;
+              font-size: 16px;
+              color: #555; /* Dark gray text */
+              background: linear-gradient(90deg, #f0f0f0 25%, #d9d9d9 50%, #f0f0f0 75%);
+              background-size: 200% 100%;
+              animation: shimmering 1.5s infinite linear;
+              text-align: center;
+              line-height: 200px; /* Adjust based on image size */
+            }
+        
+            .swiper-slide img[alt]:not([src])::after {
+              content: attr(alt);
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 18px;
+              font-weight: bold;
+              color: #333;
+              text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+        
+            /* Shimmer animation */
+            @keyframes shimmering {
+              0% {
+                background-position: -200% 0;
+              }
+              100% {
+                background-position: 200% 0;
+              }
+            }
+          </style>
+        
+        <div class="swiper-wrapper align-items-center">
+          <div class="swiper-slide">
+            <img src="portfolio/app-1.jpg" alt="out of stock">
           </div>
+      
+          <div class="swiper-slide">
+            <img src="portfolio/product-1.jpg" alt="out of stock">
+          </div>
+      
+          <div class="swiper-slide">
+            <img src="portfolio/branding-1.jpg" alt="out of stock">
+          </div>
+      
+          <div class="swiper-slide">
+            <img src="portfolio/books-1.jpg" alt="out of stock">
+          </div>
+        </div>
+      
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
           <div class="swiper-pagination"></div>
